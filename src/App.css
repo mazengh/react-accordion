@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+
+.App-title {
+  font-size: calc(10px + 2vmin);
+}
+
+.App-header {
+  height: calc(1rem + 2vmin);
+  margin: 1rem auto;
+}
+
+.App-content {
+  background-color: #282c34;
+  min-height: calc(100vh - 3rem - 2vmin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
