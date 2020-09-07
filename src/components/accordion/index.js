@@ -10,11 +10,18 @@ class Accordion extends Component {
       focusedHeadingId: '',
     };
 
+    this.addSectionId = this.addSectionId.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleKeys = this.handleKeys.bind(this);
+    this.handleArrows = this.handleArrows.bind(this);
+    this.handleHomeAndEnd = this.handleHomeAndEnd.bind(this);
+
     this.keyHandlers = {
-        ArrowUp: this.handleArrows.bind(this),
-        ArrowDown: this.handleArrows.bind(this),
-        Home: this.handleHomeAndEnd.bind(this),
-        End: this.handleHomeAndEnd.bind(this),
+        ArrowUp: this.handleArrows,
+        ArrowDown: this.handleArrows,
+        Home: this.handleHomeAndEnd,
+        End: this.handleHomeAndEnd,
     }
   }
 
@@ -23,19 +30,12 @@ class Accordion extends Component {
     level: 1,
   };
 
-  componentDidMount() {}
-
   shouldComponentUpdate(nextProps, nextState) {
     if (this.state.expandedSections !== nextState.expandedSections) {
-      console.log('UPDATING');
       return true;
     }
     return false;
   }
-
-  componentDidUpdate(prevProps, prevState) {}
-
-  componentWillUnmount() {}
 
   addSectionId(id) {
     this.setState((prevState) => {
@@ -64,8 +64,6 @@ class Accordion extends Component {
       expandedSections: expandables,
     });
   }
-
-
 
   handleArrows(key) {
     const direction = key === 'ArrowDown' ? 1 : -1;
@@ -97,14 +95,9 @@ class Accordion extends Component {
   }
 
   render() {
-    console.log('RENDERING ACCORDION');
     const { level } = this.props;
     const { expandedSections } = this.state;
-    const addSectionId = this.addSectionId.bind(this);
-    const handleToggle = this.handleToggle.bind(this);
-    const handleFocus = this.handleFocus.bind(this);
-    const handleKeys = this.handleKeys.bind(this);
-
+    const {addSectionId, handleToggle, handleFocus, handleKeys} = this;
     return <div onKeyDown={handleKeys}>{this.props.children({ level, expandedSections, addSectionId, handleToggle, handleFocus })}</div>;
   }
 }
