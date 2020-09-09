@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import nextId from 'react-id-generator';
 
-import Trigger from './trigger';
-import Content from './content';
-// import PropTypes from 'prop-types';
+import Trigger from './Trigger';
+import Content from './Content';
 
 const Section = (props) => {
   const id = nextId();
@@ -25,8 +25,9 @@ const Section = (props) => {
   );
 };
 
-// section.propTypes = {
-
-// };
+Section.propTypes = {
+  addSectionId: PropTypes.func,
+  expandedSections: PropTypes.array
+};
 
 export default Section;

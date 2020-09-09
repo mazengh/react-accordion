@@ -1,15 +1,19 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-const heading = memo((props) => {
+const Heading = memo((props) => {
   return React.createElement(`h${props.level}`, {
     children: props.children,
     ...{ ...props, level: null },
   });
 });
 
-heading.propTypes = {
+Heading.propTypes = {
   level: PropTypes.number,
 };
 
-export default heading;
+Heading.defaultProps = {
+  level: 1,
+};
+
+export default Heading;

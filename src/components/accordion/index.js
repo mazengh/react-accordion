@@ -25,11 +25,6 @@ class Accordion extends Component {
     }
   }
 
-  static defaultProps = {
-    allowMultiple: false,
-    level: 1,
-  };
-
   shouldComponentUpdate(nextProps, nextState) {
     if (this.state.expandedSections !== nextState.expandedSections) {
       return true;
@@ -105,6 +100,11 @@ class Accordion extends Component {
 Accordion.propTypes = {
   allowMultiple: PropTypes.bool,
   level: PropTypes.number,
+};
+
+Accordion.defaultProps = {
+  allowMultiple: false,
+  level: 1,
 };
 
 export default Accordion;

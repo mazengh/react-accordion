@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import Heading from '../heading';
+import Heading from '../Heading';
 
-const trigger = memo((props) => {
+const Trigger = memo((props) => {
   const expanded = props.expandedSections.includes(props.id);
   const ariaExpanded = expanded ? 'true' : 'false';
   return (
@@ -21,10 +21,20 @@ const trigger = memo((props) => {
   );
 });
 
-trigger.propTypes = {
+Trigger.propTypes = {
   level: PropTypes.number,
   label: PropTypes.string,
   id: PropTypes.string,
 };
 
-export default trigger;
+Trigger.defaultProps = {
+  level: 1,
+  label: "heading",
+  id: (props, propName, componentName) => {
+    if (!props.id) {
+      return new Error(`'id' prop was not specified in '${componentName}'.`);
+    }
+  },
+};
+
+export default Trigger;

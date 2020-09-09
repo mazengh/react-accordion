@@ -1,7 +1,7 @@
 import React from 'react';
-import Accordion from './components/accordion';
-import AccordionSection from './components/accordion/section';
-import Heading from './components/heading';
+import Accordion from './components/Accordion';
+import AccordionSection from './components/Accordion/Section';
+import Heading from './components/Heading';
 import './App.css';
 
 function App() {
@@ -63,29 +63,6 @@ function App() {
             </React.Fragment>
           )}
         </Accordion>
-
-        {/* <br />
-        <hr></hr>
-        <Accordion level={2}>
-          <AccordionSection label='Trigger 1'>
-            <p>
-              lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum
-              lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum
-              lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum
-              lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum
-              lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum
-            </p>
-          </AccordionSection>
-          <AccordionSection label='Trigger 2'>
-            <p>
-              lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum
-              lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum
-              lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum
-              lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum
-              lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum
-            </p>
-          </AccordionSection>
-        </Accordion> */}
       </main>
     </div>
   );
