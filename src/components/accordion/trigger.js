@@ -6,8 +6,9 @@ import Heading from '../Heading';
 const Trigger = memo((props) => {
   const expanded = props.expandedSections.includes(props.id);
   const ariaExpanded = expanded ? 'true' : 'false';
+  const headingClasses = expanded ? "Accordion__heading expanded" : "Accordion__heading";
   return (
-    <Heading level={props.level}>
+    <Heading className={headingClasses} level={props.level}>
       <button
         id={props.id}
         aria-controls={props.ariaControls}

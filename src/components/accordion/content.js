@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 
 const Content = (props) => {
   const contentStyle = {
-    display: props.expanded ? "block" : "none" ,
-    border: '1px solid white'
+    display: props.expanded ? "block" : "none"
   };
 
   return (
-      <div id={props.sectionId} style={contentStyle} role="region" aria-labelledby={props.triggerId}>
+      <div id={props.sectionId} className="Accordion__content" style={contentStyle} role="region" aria-labelledby={props.triggerId}>
       {props.children}
     </div>
   );

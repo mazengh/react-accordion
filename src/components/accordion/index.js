@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import './Accordion.css';
+
 class Accordion extends Component {
   constructor(props) {
     super(props);
@@ -93,7 +95,7 @@ class Accordion extends Component {
     const { level } = this.props;
     const { expandedSections } = this.state;
     const {addSectionId, handleToggle, handleFocus, handleKeys} = this;
-    return <div onKeyDown={handleKeys}>{this.props.children({ level, expandedSections, addSectionId, handleToggle, handleFocus })}</div>;
+    return <div className="Accordion" onKeyDown={handleKeys}>{this.props.children({ level, expandedSections, addSectionId, handleToggle, handleFocus })}</div>;
   }
 }
 
