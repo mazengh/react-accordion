@@ -95,7 +95,8 @@ class Accordion extends Component {
     const { level } = this.props;
     const { expandedSections } = this.state;
     const {addSectionId, handleToggle, handleFocus, handleKeys} = this;
-    return <div className="Accordion" onKeyDown={handleKeys}>{this.props.children({ level, expandedSections, addSectionId, handleToggle, handleFocus })}</div>;
+    const accordionClasses = "Accordion " + (this.props.classes ? this.props.classes : "");
+    return <div className={accordionClasses} onKeyDown={handleKeys}>{this.props.children({ level, expandedSections, addSectionId, handleToggle, handleFocus })}</div>;
   }
 }
 

@@ -23,3 +23,22 @@
 .App-link {
   color: #61dafb;
 }
+
+.App-accordion-1 {
+  width: 300px;
+}
+
+.App-accordion-1 ul {
+  padding-inline-start: 0.5rem;
+}
+
+.App a:link, a:visited {
+  color: #85ff89;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.App a:hover, a:active {
+  background-color: #fff;
+  color: #282c34;
+}
