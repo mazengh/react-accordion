@@ -27,7 +27,7 @@ const Section = (props) => {
 
 Section.propTypes = {
   addSectionId: PropTypes.func,
-  expandedSections: PropTypes.array
+  expandedSections: PropTypes.array,
 };
 
 export default Section;

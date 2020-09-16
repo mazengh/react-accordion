@@ -6,7 +6,7 @@ import Heading from '../Heading';
 const Trigger = memo((props) => {
   const expanded = props.expandedSections.includes(props.id);
   const ariaExpanded = expanded ? 'true' : 'false';
-  const headingClasses = expanded ? "Accordion__heading expanded" : "Accordion__heading";
+  const headingClasses = expanded ? 'Accordion__heading expanded' : 'Accordion__heading';
   return (
     <Heading className={headingClasses} level={props.level}>
       <button
@@ -30,7 +30,7 @@ Trigger.propTypes = {
 
 Trigger.defaultProps = {
   level: 1,
-  label: "heading",
+  label: 'heading',
   id: (props, propName, componentName) => {
     if (!props.id) {
       return new Error(`'id' prop was not specified in '${componentName}'.`);

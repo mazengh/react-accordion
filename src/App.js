@@ -14,17 +14,18 @@ function App() {
       </header>
       <main className='App-content'>
         <p>
-          A web accessible accordion component implemented based on the <a
-            href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/accordion/accordion.html"
-            rel="noopener noreferrer"
-            target="_blank">
+          A web accessible accordion component implemented based on the{' '}
+          <a
+            href='https://www.w3.org/TR/wai-aria-practices-1.1/examples/accordion/accordion.html'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
             W3 best practices
-          </a>.
-
-          {/* Edit <code>src/App.js</code> and save to reload. */}
+          </a>
+          .
         </p>
 
-        <Accordion classes="App-accordion-1" level={2} allowMultiple={false}>
+        <Accordion classes='App-accordion-1' level={2} allowMultiple={false}>
           {(accordionProps) => (
             <React.Fragment>
               <AccordionSection {...accordionProps} label='2020'>
@@ -37,7 +38,7 @@ function App() {
                 </ul>
               </AccordionSection>
               <AccordionSection {...accordionProps} label='2019'>
-               <ul>
+                <ul>
                   <li>The Amazon Burns</li>
                   <li>Notre-Dame cathedral in Paris ravaged by fire</li>
                   <li>Second crash involving Boeing 737 Max</li>

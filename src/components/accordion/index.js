@@ -13,11 +13,11 @@ class Accordion extends Component {
     };
 
     this.keyHandlers = {
-        ArrowUp: this.handleArrows,
-        ArrowDown: this.handleArrows,
-        Home: this.handleHomeAndEnd,
-        End: this.handleHomeAndEnd,
-    }
+      ArrowUp: this.handleArrows,
+      ArrowDown: this.handleArrows,
+      Home: this.handleHomeAndEnd,
+      End: this.handleHomeAndEnd,
+    };
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -63,12 +63,14 @@ class Accordion extends Component {
     return this.state.headingIds[newIndex];
   };
   handleHomeAndEnd = (key) => {
-    return key === 'Home' ? this.state.headingIds[0] : this.state.headingIds[this.state.headingIds.length - 1];
+    return key === 'Home'
+      ? this.state.headingIds[0]
+      : this.state.headingIds[this.state.headingIds.length - 1];
   };
 
   handleKeys = (event) => {
     if (!this.state.headingIds.includes(event.target.id)) return;
-    const {key} = event;
+    const { key } = event;
     const handler = this.keyHandlers[key];
     if (handler) {
       const idOfElementToFocus = handler(key);
@@ -87,9 +89,13 @@ class Accordion extends Component {
   render() {
     const { level } = this.props;
     const { expandedSections } = this.state;
-    const {addSectionId, handleToggle, handleFocus, handleKeys} = this;
-    const accordionClasses = "Accordion " + (this.props.classes ? this.props.classes : "");
-    return <div className={accordionClasses} onKeyDown={handleKeys}>{this.props.children({ level, expandedSections, addSectionId, handleToggle, handleFocus })}</div>;
+    const { addSectionId, handleToggle, handleFocus, handleKeys } = this;
+    const accordionClasses = 'Accordion ' + (this.props.classes ? this.props.classes : '');
+    return (
+      <div className={accordionClasses} onKeyDown={handleKeys}>
+        {this.props.children({ level, expandedSections, addSectionId, handleToggle, handleFocus })}
+      </div>
+    );
   }
 }
 
