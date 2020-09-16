@@ -12,13 +12,6 @@ class Accordion extends Component {
       focusedHeadingId: '',
     };
 
-    this.addSectionId = this.addSectionId.bind(this);
-    this.handleToggle = this.handleToggle.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-    this.handleKeys = this.handleKeys.bind(this);
-    this.handleArrows = this.handleArrows.bind(this);
-    this.handleHomeAndEnd = this.handleHomeAndEnd.bind(this);
-
     this.keyHandlers = {
         ArrowUp: this.handleArrows,
         ArrowDown: this.handleArrows,
@@ -34,21 +27,21 @@ class Accordion extends Component {
     return false;
   }
 
-  addSectionId(id) {
+  addSectionId = (id) => {
     this.setState((prevState) => {
       return { headingIds: [...prevState.headingIds, id] };
     });
-  }
+  };
 
-  getExpandableSections(sectionId) {
+  getExpandableSections = (sectionId) => {
     const { expandedSections } = this.state;
     if (!this.props.allowMultiple) {
       return expandedSections.filter((sectId) => sectionId === sectId);
     }
     return expandedSections.slice();
-  }
+  };
 
-  handleToggle(sectionId) {
+  handleToggle = (sectionId) => {
     let expandables = this.getExpandableSections(sectionId);
 
     if (expandables.includes(sectionId)) {
@@ -60,20 +53,20 @@ class Accordion extends Component {
     this.setState({
       expandedSections: expandables,
     });
-  }
+  };
 
-  handleArrows(key) {
+  handleArrows = (key) => {
     const direction = key === 'ArrowDown' ? 1 : -1;
     const { length } = this.state.headingIds;
     const index = this.state.headingIds.indexOf(this.state.focusedHeadingId);
     const newIndex = (index + length + direction) % length;
     return this.state.headingIds[newIndex];
-  }
-  handleHomeAndEnd(key) {
+  };
+  handleHomeAndEnd = (key) => {
     return key === 'Home' ? this.state.headingIds[0] : this.state.headingIds[this.state.headingIds.length - 1];
-  }
+  };
 
-  handleKeys(event) {
+  handleKeys = (event) => {
     if (!this.state.headingIds.includes(event.target.id)) return;
     const {key} = event;
     const handler = this.keyHandlers[key];
@@ -83,13 +76,13 @@ class Accordion extends Component {
       if (elementToFocus) elementToFocus.focus();
       event.preventDefault();
     }
-  }
+  };
 
-  handleFocus(headingId) {
+  handleFocus = (headingId) => {
     this.setState({
       focusedHeadingId: headingId,
     });
-  }
+  };
 
   render() {
     const { level } = this.props;
