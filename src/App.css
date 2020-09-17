@@ -3,12 +3,26 @@
 }
 
 .App-title {
-  font-size: calc(10px + 2vmin);
+  font-size: calc(1rem + 2vmin);
+}
+
+.App-description {
+  font-size: calc(1rem + 1vmin);
+  font-weight: 400;
 }
 
 .App-header {
   height: calc(1rem + 2vmin);
   margin: 1rem auto;
+}
+
+.App-instructions {
+  text-align: left;
+  margin: 0 auto 1rem;
+}
+
+.App-instructions code {
+  color: #61dafb;
 }
 
 .App-content {
